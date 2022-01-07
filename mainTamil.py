@@ -5,10 +5,11 @@ recognizer = sr.Recognizer()
 ''' recording the sound '''
 
 with sr.Microphone() as source:
+    noOfSec = int(input("Please enter how many seconds to record your voice: "))
     print("Adjusting noise ")
     recognizer.adjust_for_ambient_noise(source, duration=1)
-    print("Recording for 10 seconds")
-    recorded_audio = recognizer.listen(source, timeout=10)
+    print("Recording.........")
+    recorded_audio = recognizer.listen(source, timeout=noOfSec)
     print("Done recording")
 
 ''' Recorgnizing the Audio '''
